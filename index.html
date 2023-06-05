@@ -102,6 +102,83 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    errorBtns[0].addEventListener('click', () => {
+      console.log('Console Log Demo');
+    });
+
+    errorBtns[1].addEventListener('click', () => {
+      console.error('Console Error Demo');
+    });
+
+    let count = 0;
+    errorBtns[2].addEventListener('click', () => {
+      count++;
+      console.count('Count Buttons', count);
+    });
+
+    errorBtns[3].addEventListener('click', () => {
+      console.warn('Console Warn Button');
+    });
+
+
+    errorBtns[4].addEventListener('click', () => {
+      console.assert(2 === 3, 'Number: 2 ErrorMesg :"The number is not equal to 3." ');
+    });
+
+    errorBtns[5].addEventListener('click', () => {
+      console.clear();
+    });
+
+    errorBtns[6].addEventListener('click', () => {
+      console.dir(errorBtns[6]);
+    });
+
+    errorBtns[7].addEventListener('click', () => {
+      console.dirxml(errorBtns[6]);
+    });
+
+    errorBtns[8].addEventListener('click', () => {
+      console.group();
+      console.log('Inside Group');
+    });
+
+    errorBtns[9].addEventListener('click', () => {
+      console.groupEnd();
+      console.log('Outside Group');
+
+    });
+
+    errorBtns[10].addEventListener('click', () => {
+      console.table([{ name: 'Software Engeneer', num: 110 },{ name: 'SDE', num: 130 },{ name: 'Manager', num: 90 }]);
+    });
+
+    errorBtns[11].addEventListener('click', () => {
+      console.time('Timer');
+    });
+
+    errorBtns[12].addEventListener('click', () => {
+      console.timeEnd('Timer');
+    });
+
+    errorBtns[13].addEventListener('click', () => {
+      const deep = () => {
+        deeper();
+      };
+      const deeper = () => {
+        deepest();
+      };
+      const deepest = () => {
+        console.trace();
+      };
+      deep();
+    });
+
+    errorBtns[14].addEventListener('click', () => {
+      nonexistentFunction();
+    });
+
+
   </script>
 </body>
 
