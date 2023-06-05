@@ -100,6 +100,18 @@
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
 
+
+    class ValidationError extends Error {
+      constructor(message) {
+        super(message); // (1)
+        this.name = "ValidationError"; // (2)
+      }
+    }
+
+    function test() {
+      throw new ValidationError("Whoops!");
+    }
+
     // Start your code here
     // You may move this JS to another file if you wish
 
@@ -179,14 +191,18 @@
     });
 
     try {
-      alert( 'Hello ' );
-    if (confirm('Make an error?')) BAD_CODE();
+      test();
     } catch (err) {
-      alert( 'catch error' );
+      alert(err.message); // Whoops!
+      alert(err.name); // ValidationError
+      alert(err.stack); // a list of nested calls with line numbers for each    
     } finally {
       alert( 'Bye ^_^' );
       throw err;
     }
+
+
+
 
   </script>
 </body>
