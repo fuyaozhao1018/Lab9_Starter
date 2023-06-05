@@ -178,6 +178,15 @@
       nonexistentFunction();
     });
 
+    try {
+      alert( 'Hello ' );
+    if (confirm('Make an error?')) BAD_CODE();
+    } catch (err) {
+      alert( 'catch error' );
+    } finally {
+      alert( 'Bye ^_^' );
+      throw err;
+    }
 
   </script>
 </body>
